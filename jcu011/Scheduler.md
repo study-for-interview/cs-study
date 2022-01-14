@@ -1,6 +1,6 @@
 ### 스케줄러
-[스케줄러 종류 참고 링크](https://jhnyang.tistory.com/372)
-[스케줄링 알고리즘 참고 링크](https://hyunah030.tistory.com/4)
+* [스케줄러 종류 참고 링크](https://jhnyang.tistory.com/372)
+* [스케줄링 알고리즘 참고 링크](https://hyunah030.tistory.com/4)
 
 ***
 
