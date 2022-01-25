@@ -69,3 +69,27 @@ cs - 운영체제, db, 네트워크, 자료구조에 대해서 공통 범위를 
 # 데이터베이스
 
 # 네트워크
+
+- OSI 7 계층
+
+- TCP 3 way handshake & 4 way handshake
+
+- TCP/IP 흐름제어 & 혼잡제어
+
+- UDP
+
+- 대칭키 & 공개키
+
+- HTTP & HTTPS
+
+- TLS/SSL handshake
+
+- 로드 밸런싱(Load Balancing)
+
+- Blocking,Non-blocking & Synchronous,Asynchronous
+
+- Blocking & Non-Blocking I/O
+
+- 웹 통신의 큰 흐름
+
+- DNS Round Robin 방식
