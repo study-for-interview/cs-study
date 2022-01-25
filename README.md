@@ -81,6 +81,22 @@ cs - 운영체제, db, 네트워크, 자료구조에 대해서 공통 범위를 
 - 대칭키 & 공개키
 
 - HTTP & HTTPS
+  - HTTP status code
+  - HTTP METHOD
+  - HTTP 특징
+  - HTTP와 HTTPS의 차이
+
+- HTTP 1.1 vs HTTP 2.0 vs HTTP 3.0
+
+- REST, RESTFUL, REST API
+
+- Web Server VS WAS
+
+- CORS
+
+- COOKIE & SESSION
+
+- JWT
 
 - TLS/SSL handshake
 
@@ -91,5 +107,6 @@ cs - 운영체제, db, 네트워크, 자료구조에 대해서 공통 범위를 
 - Blocking & Non-Blocking I/O
 
 - 웹 통신의 큰 흐름
+  - www.naver.com 을 입력했을 때 일어나는 일
 
 - DNS Round Robin 방식
