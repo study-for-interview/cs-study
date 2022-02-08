@@ -1,6 +1,4 @@
 # Cookie & Session
-* 김영한의 **모든 개발자를 위한 HTTP 웹 기본 지식**강의를 참고함
-* [해당 블로그](https://interconnection.tistory.com/74)를 참고함
 
 <br>
 
