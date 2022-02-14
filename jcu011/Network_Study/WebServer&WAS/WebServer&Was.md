@@ -13,7 +13,6 @@
 * 웹 컨테이너(Web Container)란 JSP, Servlet을 실행시킬 수 있는 소프트웨어를 말한다.
 * 대표적인 WAS로는 **Tomcat**이 있다.
 
-
 <br>
 
 ### Web Server vs WAS

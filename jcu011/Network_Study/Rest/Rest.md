@@ -20,7 +20,7 @@ HTTP Method(POST, GET, PUT, DELETE)를 통해 해당 자원에 대한 CRUD Opera
     * 클라이언트는 서버에 요청 메시지를 전송하고
     * 서버는 요청에 대한 응답 메시지를 전송한다.
 
-3. 무상태(stateless)
+3. 무상태(stateless) - `Cookie&Session파일 참고`
     * 세션등 이전 상황(문맥) 없이도 통신할 수 있다.
 
 4. 캐시가능(Cacheable)
