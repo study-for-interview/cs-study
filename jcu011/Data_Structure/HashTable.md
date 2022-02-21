@@ -7,7 +7,7 @@
 
 <br> <br>
 
-### 연관배열 (Associative array)
+## 연관배열 (Associative array)
 
 연관배열이란 키(key) 1개와 값(value) 1개가 1:1로 연관되어 있는 자료구조이다.
 
@@ -16,7 +16,7 @@
 <br> <br>
 
 
-### 해시테이블 (Hash table)
+## 해시테이블 (Hash table)
 
 **해시테이블**은 Hash를 이용하여 연관배열을 구현한 자료구조 이다. 
 
@@ -45,7 +45,7 @@
 
 
 
-### 해시 충돌
+## 해시 충돌
 
 HashMap은 기본적으로 각 객체의 hashCode() 메서드가 반환하는 값을 사용하는데, 결과 자료형은 **int** 이다. 
 
@@ -83,7 +83,7 @@ c.f) 비둘기집 원리, [생일 문제](https://ko.wikipedia.org/wiki/%EC%83%9
 
 <br> <br>
 
-### Open Addressing와 Separate Chaining 비교
+## Open Addressing와 Separate Chaining 비교
 
 Open Addressing는 연속된 공간에 데이터를 저장하기 때문에 데이터 개수가 적으면
 
@@ -99,7 +99,7 @@ Open Addressing는 연속된 공간에 데이터를 저장하기 때문에 데�
 
 <br> <br>
 
-### Separate Chaining In Java
+## Separate Chaining In Java
 
 위에서 설명했듯이 `HashSet`, `HashMap` ,`HashTable`은 Separate Chaining방식으로 구현되어 있다.
 
@@ -137,7 +137,7 @@ Open Addressing는 연속된 공간에 데이터를 저장하기 때문에 데�
 
 <br> <br>
 
-### Bucket에서의 Tree구현
+## Bucket에서의 Tree구현
 
 Java 8 HashMap에서는 Entry 클래스 대신 **Node 클래스**를 사용한다. 
 
@@ -153,7 +153,7 @@ Node 클래스 하위에 TreeNode 클래스가 있다는 것이 다른점이다.
 
 <br> <br>
 
-### AVL, Splay등도 있는데 왜 Red-Black Tree ?
+## AVL, Splay등도 있는데 왜 Red-Black Tree ?
 
 `레드-블랙 트리(Red-black tree)`는 자가 균형 이진 탐색 트리(self-balancing binary search tree)로서, 대표적으로는 연관 배열(associative array) 등을 구현하는 데 쓰이는 자료구조다. 레드-블랙 트리는 복잡한 자료구조지만, 실 사용에서 효율적이고, 최악의 경우에도 상당히 우수한 실행 시간을 보인다: 트리에 n개의 원소가 있을 때 O(log n)의 시간복잡도로 삽입, 삭제, 검색을 할 수 있다.
 
@@ -165,7 +165,7 @@ Node 클래스 하위에 TreeNode 클래스가 있다는 것이 다른점이다.
 
 <br> <br>
 
-### 해시 버킷 동적 확장
+## 해시 버킷 동적 확장
 
 해시 버킷을 적게 사용한다면 초반에 메모리 사용을 절약할 수 있지만, 충돌을 빈번하게 발생할 수 있다는 단점이 있고, 너무 많이 사용하게 되면 메모리 낭비를 할 수도 있다는 단점이 있다.
 
@@ -238,7 +238,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
 <br> <br>
 
-### 보조 해시 함수
+## 보조 해시 함수
 
 그런데 이렇게 해시 버킷 크기를 두 배로 확장하는 것에는 결정적인 문제가 있다. 해시 버킷의 개수 M이 2^a 형태가 되기 때문에, index = X.hashCode() % M을 계산할 때 X.hashCode()의 하위 a개의 비트만 사용하게 된다는 것이다. 즉 해시 함수가 32비트 영역을 고르게 사용하도록 만들었다 하더라도 해시 값을 2의 승수로 나누면 해시 충돌이 쉽게 발생할 수 있다.
 
