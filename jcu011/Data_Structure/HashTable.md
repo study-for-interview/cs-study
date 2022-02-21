@@ -24,7 +24,7 @@
 
 데이터의 값(value)을 키와 함께 저장하여 검색을 빠르게 하기 위한 자료 구조이다.
 
-<br> <br>
+<br>
 
 
 #### Hash가 뭔데 ?
@@ -37,7 +37,7 @@
 * `Value` : Key와 1:1로 매핑되어 있는 값으로 Bucket안에 들어가 있는 실제 값이다.
 * `Bucket` : 해시와 매핑되는 값(Value)이 저장되어 있는 공간이다.
 
-![image-20210913022213400](C:\Users\ChanuiJeon\AppData\Roaming\Typora\typora-user-images\image-20210913022213400.png)
+![](2022-02-21-17-18-26.png)
 
 
 
@@ -59,10 +59,7 @@ c.f) 비둘기집 원리, [생일 문제](https://ko.wikipedia.org/wiki/%EC%83%9
 
 > 아무리 설계를 잘 해도 충돌이 일어날 수 밖에 없다 !!
 
-![image-20210913022433184](C:\Users\ChanuiJeon\AppData\Roaming\Typora\typora-user-images\image-20210913022433184.png)
-
-
-<br>
+![](2022-02-21-17-17-38.png)
 
 
 #### 해시 충돌 처리 방법
@@ -122,7 +119,6 @@ Open Addressing는 연속된 공간에 데이터를 저장하기 때문에 데�
 
   하나의 버킷에 하나의 key-value쌍이 들어가 있거나 헤더에 찾고 있는 key-value쌍이 위치한 경우 1만큼의 시간이 필요하다.
 
-<br>
 
 ##### 2. Java8 이후의 get()
 
