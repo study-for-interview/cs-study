@@ -65,6 +65,28 @@ cs - 운영체제, db, 네트워크, 자료구조에 대해서 공통 범위를 
 
 
 # 자료구조
+- 선형 자료구조 
+  - Array
+  - List
+  - HashTable
+  - Queue
+  - Heap
+  - Stack
+- 비선형 자료구조
+  - Graph
+  - Tree
+    - Binary Tree
+    - Full Binary Tree
+    - Complete Binary Tree
+    - Binary Search Tree
+   - Trie
+- 정렬 알고리즘
+  - 선택 정렬, 거품 정렬, 삽입 정렬
+  - 병합 정렬, 퀵 정렬, 힙 정렬
+- 이분 탐색
+- 동적계획법
+- 최단 경로
+- 최소 비용(MST)
 
 # 데이터베이스
 
