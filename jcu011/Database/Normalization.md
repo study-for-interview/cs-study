@@ -44,8 +44,8 @@
 
 3. 갱신 이상 (update anomaly)
     * 같은 정보가 복수개의 행에서 표현되어서 갱신은 논리적인 모순을 낳게 된다.
-    * 아래의 그림에서 특정 직원의 주소 변경시 여러개의 레코드를 수정하여야 한다. 
-        Employee 519는 하나의 레코드의 주소만 변경되어 다른 레코드에서 다른 주소를 가지고 있다.
+    * 아래의 그림에서 특정 직원의 주소 변경시 여러개의 레코드를 수정하여야 한다. Employee 519는 하나의 레코드의 주소만 변경되어 다른 레코드에서 다른 주소를 가지고 있다.
+    
     ![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Update_anomaly.png/420px-Update_anomaly.png)
 
 
