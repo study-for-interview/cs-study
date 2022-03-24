@@ -336,3 +336,81 @@ database에 접근해서 데이터를 수정할 때 동시에 수정이 일어�
 
 그러다 어느 순간에는 각 단위 프로그램에서 커넥션을 가져가기 위해 기다려야 하는 상황이 발생할 수도 있는 것이다.
 
+# 트랜잭션 전파
+
+트랜잭션의 propagation 설정이란
+```
+Spring에서 사용하는 어노테이션 '@Transactional'은 해당 메서드를 하나의 트랜잭션 안에서 진행할 수 있도록 만들어주는 역할을 합니다. 
+
+이때 트랜잭션 내부에서 트랜잭션을 또 호출한다면 스프링에서는 어떻게 처리하고 있을까요? 새로운 트랜잭션이 생성될 수도 있고, 이미 트랜잭션이 있다면 부모 트랜잭션에 합류할 수도 있을 것입니다. 
+
+진행되고 있는 트랜잭션에서 다른 트랜잭션이 호출될 때 어떻게 처리할지 정하는 것을 '트랜잭션의 전파 설정'이라고 부릅니다.
+```
+
+![image](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbAVbyb%2Fbtq7XrDkI2p%2F3EcaWlKwohOv0OOobFQL4K%2Fimg.png)
+
+전파 설정 옵션
+
+트랜잭션의 전파 설정은 '@Transactional'의 옵션 'propagation'을 통해 설정할 수 있습니다. 각 옵션은 아래와 같습니다.
+
+## REQUIRED (기본값)
+
+부모 트랜잭션이 존재한다면 부모 트랜잭션으로 합류합니다. 부모 트랜잭션이 없다면 새로운 트랜잭션을 생성합니다.
+
+중간에 롤백이 발생한다면 모두 하나의 트랜잭션이기 때문에 진행사항이 모두 롤백됩니다.
+
+![image](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbkPsKW%2Fbtq7Xs3kagK%2Fz1O92fn0Spuik8MoT4nRA1%2Fimg.png)
+
+## REQUIRES_NEW
+
+무조건 새로운 트랜잭션을 생성합니다. 각각의 트랜잭션이 롤백되더라도 서로 영향을 주지 않습니다.
+
+![image](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbQ2CTZ%2Fbtq7Y4ATdH6%2F4fm4xVfiJHKSyL9u0KBnd0%2Fimg.png)
+
+## MANDATORY
+
+부모 트랜잭션에 합류합니다. 만약 부모 트랜잭션이 없다면 예외를 발생시킵니다.
+
+![image](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbwjNlq%2Fbtq7VxxwxpR%2FNI1gWSlnahZFbatww8Qwv1%2Fimg.png)
+
+## NESTED
+
+부모 트랜잭션이 존재한다면 중첩 트랜잭션을 생성합니다. 중첩된 트랜잭션 내부에서 롤백 발생시 해당 중첩 트랜잭션의 시작 지점 까지만 롤백됩니다. 중첩 트랜잭션은 부모 트랜잭션이 커밋될 때 같이 커밋됩니다.
+
+부모 트랜잭션이 존재하지 않는다면 새로운 트랜잭션을 생성합니다.
+
+![image](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbMpI6s%2Fbtq7VXJujZK%2F7JpZ1DNEUr28PmrQ2lQsVK%2Fimg.png)
+
+## NEVER
+
+트랜잭션을 생성하지 않습니다. 부모 트랜잭션이 존재한다면 예외를 발생시킵니다.
+
+![image](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F6DNjl%2Fbtq7ZyIe9X3%2FsL2id4v3vko0QgsXpWs9j1%2Fimg.png)
+
+
+## SUPPORTS
+
+부모 트랜잭션이 있다면 합류합니다. 진행중인 부모 트랜잭션이 없다면 트랜잭션을 생성하지 않습니다.
+
+## NOT_SUPPORTED
+
+부모 트랜잭션이 있다면 보류시킵니다. 진행중인 부모 트랜잭션이 없다면 트랜잭션을 생성하지 않습니다.
+
+
+---
+
+참고 :
+
+https://rebro.kr/162?category=484170
+
+https://jeong-pro.tistory.com/241
+
+https://joont92.github.io/db/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC-%EC%88%98%EC%A4%80-isolation-level/
+
+https://nesoy.github.io/articles/2019-05/Database-Transaction-isolation
+
+https://velog.io/@fortice/MySQL-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EC%9E%A0%EA%B8%88Lock#0-%EA%B3%B5%EC%9C%A0-%EC%9E%A0%EA%B8%88shared-lock--%EB%B2%A0%ED%83%80-%EC%9E%A0%EA%B8%88exclusive-lock
+
+https://sabarada.tistory.com/175
+
+
