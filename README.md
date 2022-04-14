@@ -212,3 +212,51 @@ cs - 운영체제, db, 네트워크, 자료구조에 대해서 공통 범위를 
 - Map
   - HashTable vs HashMap vs LinkedHashMap vs TreeMap
   - HashMap vs ConcurrentHashMap
+
+---
+
+# 📌 Spring
+
+Servlet
+ - 개념
+ - tomcat
+ - servlet container
+ - 동작과정
+
+Spring 기본
+ - Spring vs Spring MVC vs Spring Boot
+     - MVC1 vs MVC2
+ - dispatcher servlet
+ - IoC
+ - DI
+ - Bean, Component
+     - @Component @Service @Controller
+ - Container
+ - VO vs DTO vs DAO
+
+Spring 심화
+ - AOP
+    - JDK Dynamic Proxy
+    - CGLIB
+ - interceptor
+    - filter와 차이점
+ - Spring 전체 동작과정
+
+JPA
+ - JDBC, Spring JDBC
+ - Sql Mapper(MyBatis), ORM
+ - JPA, Hibernate
+ - 영속성 컨텍스트
+ - 즉시/지연 로딩
+ - 프록시
+ - 고아객체
+ - 단뱡향/양방향 매핑
+ - N + 1 문제
+
+테스트
+ - DDD, TDD
+ - Junit4 vs Junit5
+ - 단위, 통합, 인수 테스트
+ - stub, mock
+ - SpringBoot 계층별 테스트 방법
+- 테스트 커버리지 (JACOCO)
